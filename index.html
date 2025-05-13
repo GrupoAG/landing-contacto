@@ -3,49 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Asesoramiento de Medicina Prepaga</title>
+  <title>Solicitá Asesoramiento en Planes de Salud</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1588776814546-ec7ee04861ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(rgba(245, 245, 245, 0.95), rgba(245, 245, 245, 0.95)), url('https://images.unsplash.com/photo-1588776814546-ec7ee04861ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
     }
     .container {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 30px;
-      background-color: #ffffffcc;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 40px;
+      background-color: #ffffffee;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.1);
     }
     h1 {
       text-align: center;
-      color: #0077b6;
+      color: #006ba6;
+      font-size: 2em;
+      margin-bottom: 20px;
     }
-    form input, form select, form button {
+    form input, form button {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin: 10px 0;
-      border-radius: 5px;
+      border-radius: 6px;
       border: 1px solid #ccc;
+      font-size: 1em;
     }
     form button {
-      background-color: #0077b6;
+      background-color: #006ba6;
       color: white;
       font-weight: bold;
-      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s;
+    }
+    form button:hover {
+      background-color: #004e7c;
+    }
+    label {
+      font-size: 0.95em;
+      color: #333;
     }
     .comments {
       margin-top: 30px;
-      font-style: italic;
-      color: #444;
     }
     .comment {
-      margin-bottom: 15px;
-      background: #f0f0f0;
-      padding: 10px;
-      border-left: 4px solid #0077b6;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #f7fafd;
+      border-left: 5px solid #006ba6;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .comment strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #006ba6;
     }
     #termsModal {
       display: none;
@@ -58,39 +74,53 @@
     }
     #termsContent {
       background: white;
-      max-width: 600px;
+      max-width: 700px;
       max-height: 80vh;
       overflow-y: scroll;
-      padding: 20px;
+      padding: 30px;
       border-radius: 10px;
+      font-size: 0.95em;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Asesoramiento Médico - [Tu Nombre]</h1>
-    <p>Completá tus datos y un asesor externo te contactará sin compromiso.</p>
+    <h1>Solicitá Asesoramiento Gratuito sobre Planes de Medicina Prepaga</h1>
+    <p>Completá tus datos y un asesor externo te contactará para ofrecerte las mejores opciones en coberturas de salud.</p>
     <form id="form" action="https://script.google.com/macros/s/AKfycbwp9TrcYNiHEG0bySNK5WKHuxBaphvKGBe9eYOSX4fvZZRc39E9y2duJaodlrcATvDO/exec" method="POST">
       <input type="text" name="nombre" placeholder="Nombre completo" required>
       <input type="number" name="edad" placeholder="Edad" required>
       <input type="text" name="localidad" placeholder="Localidad" required>
       <input type="email" name="email" placeholder="Email" required>
       <input type="tel" name="telefono" placeholder="Teléfono" required>
-      <label><input type="checkbox" id="acceptTerms" required> Acepto los <a href="#" onclick="openTerms(event)">términos y condiciones</a></label>
-      <button type="submit">Enviar</button>
+      <label><input type="checkbox" id="consentContact" required> Acepto ser contactado por asesores externos para recibir información sobre planes médicos.</label><br>
+      <label><input type="checkbox" id="acceptTerms" required> He leído y acepto los <a href="#" onclick="openTerms(event)">Términos y Condiciones</a>.</label>
+      <button type="submit">Enviar Solicitud</button>
     </form>
     <div class="comments">
-      <div class="comment">"Me contactaron en menos de 24 horas. Súper recomendable!" – Laura G., Córdoba</div>
-      <div class="comment">"Pude comparar varias opciones de cobertura médica sin salir de casa." – Martín R., Mendoza</div>
-      <div class="comment">"Excelente atención y me ayudaron a entender cada plan." – Sofía L., Buenos Aires</div>
+      <div class="comment">
+        <strong>Valeria A. – Rosario</strong>
+        “Me asesoraron con claridad y me ofrecieron un plan que se ajustaba a mi presupuesto. Muy recomendable.”
+      </div>
+      <div class="comment">
+        <strong>Lucas M. – Mar del Plata</strong>
+        “Excelente atención, rápida y sin vueltas. Me ayudaron a entender todas las opciones disponibles.”
+      </div>
+      <div class="comment">
+        <strong>Camila G. – Capital Federal</strong>
+        “Fueron muy profesionales y me contactaron el mismo día. El servicio es gratuito y muy útil.”
+      </div>
     </div>
   </div>
 
   <div id="termsModal">
     <div id="termsContent">
       <h2>Términos y Condiciones</h2>
-      <p>Este servicio consiste en recolectar los datos personales provistos por usted para ser derivados a asesores externos del rubro de medicina prepaga con fines informativos y comerciales...</p>
-      <p>[...] Usted declara que comprende y acepta que su información podrá ser compartida con terceros prestadores de servicios médicos privados y/o sus representantes comerciales. Al aceptar estos términos, renuncia a cualquier reclamo sobre el uso de los datos de manera conforme a los fines aquí expresados. Estos términos y condiciones pueden ser modificados en cualquier momento sin previo aviso y es responsabilidad del usuario revisarlos periódicamente. La extensión de este documento no implica necesariamente que haya más información relevante, sino simplemente que no queremos que lo leas todo.</p>
+      <p>El presente formulario tiene como finalidad la recolección de datos personales con el único propósito de que un asesor externo y/o tercero especializado en servicios de medicina prepaga se comunique con usted. Al completar el formulario, el usuario otorga su consentimiento expreso, libre, informado y voluntario para el tratamiento de sus datos personales en los términos de la Ley 25.326 de Protección de Datos Personales y demás normativas aplicables.</p>
+      <p>El usuario entiende que la información recolectada podrá ser compartida con asesores independientes o representantes comerciales debidamente autorizados, quienes podrán contactarlo a través de los datos proporcionados (email, teléfono, etc.).</p>
+      <p>Se informa que los datos no serán utilizados con fines distintos a los establecidos ni se almacenarán más allá del tiempo necesario para cumplir con dicho fin. El usuario podrá ejercer en cualquier momento los derechos de acceso, rectificación, actualización o supresión de sus datos enviando una solicitud expresa a la dirección de correo que oportunamente se informe.</p>
+      <p>El uso de este sitio implica la aceptación plena y sin reservas de los presentes términos y condiciones. Este documento podrá ser actualizado o modificado sin previo aviso.</p>
       <button onclick="closeTerms()">Cerrar</button>
     </div>
   </div>
@@ -104,8 +134,8 @@
       document.getElementById('termsModal').style.display = 'none';
     }
     document.getElementById("form").addEventListener("submit", function (e) {
-      if (!document.getElementById("acceptTerms").checked) {
-        alert("Debes aceptar los términos y condiciones.");
+      if (!document.getElementById("acceptTerms").checked || !document.getElementById("consentContact").checked) {
+        alert("Debes aceptar los términos y autorizar el contacto para enviar el formulario.");
         e.preventDefault();
       }
     });
